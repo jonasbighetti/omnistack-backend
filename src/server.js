@@ -20,6 +20,9 @@ mongoose.connect('mongodb+srv://admin:admin@cluster0-9bhwv.mongodb.net/omnistack
 
 app.use((req, res, next) => {
     req.io = io
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
     return next()
 })
 
